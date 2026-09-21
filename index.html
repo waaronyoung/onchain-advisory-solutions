@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OnChain Advisory Solutions</title>
+
+<meta name="description" content="OnChain Advisory Solutions helps businesses identify, evaluate, and pursue opportunities in tokenized real-world assets.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #f5f7fa;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(7, 17, 31, 0.95);
+    border-bottom: 1px solid #20344e;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #5ea8ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #a9b7c9;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-button {
+    background: #5ea8ff;
+    color: #06101d;
+    padding: 11px 17px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* GENERAL */
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-label {
+    color: #5ea8ff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 45px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 18px;
+}
+
+.section-description {
+    color: #a9b7c9;
+    max-width: 680px;
+    font-size: 17px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 75% 30%, rgba(52, 137, 230, 0.13), transparent 35%),
+        linear-gradient(180deg, #07111f, #081525);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 13px;
+    border: 1px solid #29415e;
+    border-radius: 50px;
+    color: #8bc4ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    line-height: 0.98;
+    letter-spacing: -4px;
+    max-width: 750px;
+}
+
+.hero-text {
+    color: #a9b7c9;
+    font-size: 19px;
+    max-width: 650px;
+    margin: 28px 0 35px;
+}
+
+.buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.button-primary {
+    display: inline-block;
+    background: #5ea8ff;
+    color: #06101d;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button-primary:hover {
+    background: #8bc4ff;
+}
+
+.button-secondary {
+    display: inline-block;
+    border: 1px solid #29415e;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button-secondary:hover {
+    border-color: #5ea8ff;
+}
+
+/* HERO CARD */
+
+.hero-card {
+    background: linear-gradient(145deg, #10243b, #0b1728);
+    border: 1px solid #20344e;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+}
+
+.card-label {
+    color: #8798ad;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.card-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 8px 0 25px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.card-item {
+    border: 1px solid #20344e;
+    border-radius: 10px;
+    padding: 15px;
+    color: #d9e4ef;
+    font-size: 14px;
+}
+
+.card-bottom {
+    margin-top: 25px;
+    color: #8fa1b6;
+    font-size: 14px;
+}
+
+.card-bottom strong {
+    color: white;
+}
+
+/* SERVICES */
+
+.services {
+    background: #081524;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: #0d1d30;
+    border: 1px solid #20344e;
+    border-radius: 17px;
+    padding: 30px;
+    min-height: 320px;
+    transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #5ea8ff;
+}
+
+.service-number {
+    color: #5ea8ff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin: 35px 0 12px;
+}
+
+.service-card p {
+    color: #a9b7c9;
+    font-size: 15px;
+}
+
+.service-card ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    color: #cbd7e5;
+    font-size: 14px;
+}
+
+.service-card li {
+    margin-bottom: 6px;
+}
+
+/* PROCESS */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.process-step {
+    border-top: 1px solid #29415e;
+    padding-top: 22px;
+}
+
+.process-number {
+    color: #5ea8ff;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.process-step h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.process-step p {
+    color: #9eafc3;
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #081524;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-text {
+    color: #a9b7c9;
+    font-size: 17px;
+}
+
+.about-box {
+    border-left: 3px solid #5ea8ff;
+    padding-left: 30px;
+}
+
+.about-box h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #a9b7c9;
+}
+
+/* MARKETS */
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 45px;
+}
+
+.market {
+    border: 1px solid #20344e;
+    border-radius: 13px;
+    padding: 25px;
+    text-align: center;
+    background: #0c1b2d;
+}
+
+.market h3 {
+    font-size: 18px;
+}
+
+.market p {
+    color: #8293a8;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+/* CONTACT */
+
+.contact-box {
+    border: 1px solid #20344e;
+    border-radius: 24px;
+    padding: 65px;
+    background: linear-gradient(120deg, #0e2238, #0a1728);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.contact-box h2 {
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: #a9b7c9;
+    max-width: 650px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #182a40;
+    padding: 40px 0;
+    color: #8192a7;
+    font-size: 13px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-email {
+    color: #8bc4ff;
+    text-decoration: none;
+}
+
+.disclaimer {
+    max-width: 950px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .market-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 30px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            OnChain <span>Advisory Solutions</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#about">About</a>
+            <a href="#markets">Markets</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <a
+            class="nav-button"
+            href="mailto:waaronyoung2@gmail.com?subject=Tokenization%20Assessment"
+        >
+            Get Started
+        </a>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="badge">
+                Real-World Asset Strategy
+            </div>
+
+            <h1>
+                Turning real-world assets into on-chain opportunities.
+            </h1>
+
+            <p class="hero-text">
+                OnChain Advisory Solutions helps businesses identify,
+                evaluate, and pursue opportunities in the rapidly developing
+                tokenization market.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="button-primary"
+                    href="mailto:waaronyoung2@gmail.com?subject=Request%20a%20Tokenization%20Assessment"
+                >
+                    Request an Assessment
+                </a>
+
+                <a
+                    class="button-secondary"
+                    href="#services"
+                >
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="card-label">
+                Our Focus
+            </div>
+
+            <div class="card-title">
+                Tokenization
+            </div>
+
+            <div class="card-grid">
+
+                <div class="card-item">
+                    Research
+                </div>
+
+                <div class="card-item">
+                    Feasibility
+                </div>
+
+                <div class="card-item">
+                    Business Development
+                </div>
+
+                <div class="card-item">
+                    Strategy
+                </div>
+
+            </div>
+
+            <div class="card-bottom">
+
+                <strong>Initial Market:</strong>
+                Commercial Real Estate
+
+                <br><br>
+
+                <strong>Future Markets:</strong>
+                Private Credit · Funds · Equity
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-label">
+            What We Do
+        </div>
+
+        <h2>
+            Clarity before implementation.
+        </h2>
+
+        <p class="section-description">
+            We help businesses understand where tokenization may create
+            value before they commit significant resources to implementation.
+        </p>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-number">
+                    01 / RESEARCH
+                </div>
+
+                <h3>
+                    Tokenization Research
+                </h3>
+
+                <p>
+                    Market and competitive research focused on a client's
+                    assets, industry, and strategic goals.
+                </p>
+
+                <ul>
+                    <li>Market trends</li>
+                    <li>Comparable projects</li>
+                    <li>Potential opportunities</li>
+                    <li>Competitive landscape</li>
+                </ul>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">
+                    02 / FEASIBILITY
+                </div>
+
+                <h3>
+                    Tokenization Feasibility
+                </h3>
+
+                <p>
+                    A practical assessment of whether an asset or business
+                    could benefit from a tokenization strategy.
+                </p>
+
+                <ul>
+                    <li>Asset analysis</li>
+                    <li>Potential structures</li>
+                    <li>Economics and costs</li>
+                    <li>Key risks and considerations</li>
+                </ul>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">
+                    03 / BUSINESS DEVELOPMENT
+                </div>
+
+                <h3>
+                    Business Development
+                </h3>
+
+                <p>
+                    Research and prospect development to help businesses
+                    identify relevant counterparties and opportunities.
+                </p>
+
+                <ul>
+                    <li>Prospect research</li>
+                    <li>Partner identification</li>
+                    <li>Industry mapping</li>
+                    <li>Opportunity pipelines</li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Process
+        </div>
+
+        <h2>
+            From asset to strategy.
+        </h2>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Analyze
+                </h3>
+
+                <p>
+                    Understand the asset, business model,
+                    objectives, and constraints.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Research
+                </h3>
+
+                <p>
+                    Study the market, comparable projects,
+                    infrastructure, and potential counterparties.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Evaluate
+                </h3>
+
+                <p>
+                    Assess potential benefits, costs, structures,
+                    risks, and practical considerations.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Strategy
+                </h3>
+
+                <p>
+                    Deliver a clear report and actionable
+                    next-step roadmap.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <div class="section-label">
+                About
+            </div>
+
+            <h2>
+                Independent, research-led perspective.
+            </h2>
+
+            <p class="about-text">
+                Tokenization is developing across commercial real estate,
+                private credit, funds, and securities. Our role is to help
+                businesses understand the opportunity and evaluate whether
+                it makes sense for their specific situation.
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>
+                Start with the opportunity.
+            </h3>
+
+            <p>
+                We focus first on research and strategic analysis rather
+                than assuming every asset should be tokenized. The goal is
+                a clear understanding of the opportunity before a business
+                decides whether to move forward.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MARKETS -->
+
+<section id="markets">
+
+    <div class="container">
+
+        <div class="section-label">
+            Markets
+        </div>
+
+        <h2>
+            Where we see potential.
+        </h2>
+
+        <p class="section-description">
+            Our initial focus is commercial real estate, with the ability
+            to expand our research into other real-world asset markets.
+        </p>
+
+
+        <div class="market-grid">
+
+            <div class="market">
+                <h3>Commercial Real Estate</h3>
+                <p>Initial focus</p>
+            </div>
+
+            <div class="market">
+                <h3>Private Credit</h3>
+                <p>Future market</p>
+            </div>
+
+            <div class="market">
+                <h3>Funds</h3>
+                <p>Future market</p>
+            </div>
+
+            <div class="market">
+                <h3>Equity</h3>
+                <p>Future market</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div>
+
+                <div class="section-label">
+                    Let's Talk
+                </div>
+
+                <h2>
+                    Explore your tokenization opportunity.
+                </h2>
+
+                <p>
+                    Tell us about your business or asset and what you are
+                    trying to accomplish. Start with a conversation and
+                    an initial assessment.
+                </p>
+
+            </div>
+
+
+            <a
+                class="button-primary"
+                href="mailto:waaronyoung2@gmail.com?subject=OnChain%20Advisory%20Solutions%20Inquiry"
+            >
+                Email OnChain Advisory
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <strong style="color:white;">
+                OnChain Advisory Solutions
+            </strong>
+
+            <a
+                class="footer-email"
+                href="mailto:waaronyoung2@gmail.com"
+            >
+                waaronyoung2@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="disclaimer">
+
+            OnChain Advisory Solutions provides business research and
+            strategic analysis. We do not provide legal, tax, accounting,
+            securities, or investment advice. Clients should consult
+            appropriately licensed professionals regarding regulatory,
+            legal, tax, and compliance matters. Information presented by
+            OnChain Advisory Solutions is for general business and research
+            purposes.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
