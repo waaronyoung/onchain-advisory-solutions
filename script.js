@@ -1,1 +1,10 @@
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.style.opacity="1"})},{threshold:.12});document.querySelectorAll(".cards article,.markets article,.process>div,.report,.principles>div").forEach(e=>{e.style.opacity="0";e.style.transition="opacity .7s ease,transform .7s ease";e.style.transform="translateY(15px)";observer.observe(e)});document.querySelectorAll(".cards article,.markets article,.process>div,.report,.principles>div").forEach(e=>{e.addEventListener("transitionend",()=>e.style.transform="none")});
+const items = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+items.forEach(item => observer.observe(item));
